@@ -1,9 +1,44 @@
-import random from random
+from math import random
 
 card_colours = ["diamonds", "hearts", "spades", "clubs"]
 
-card_value = {"A":11, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, "J":10, "Q":10, "K":10
+card_value = {"A":11, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, "J":10, "Q":10, "K":10}
 
-def calculated_score(card_list)
-  total = 0
-  
+def calculated_score(card_list):
+
+	total = 0
+	for card in card_list:
+		if total >= 11 and card == "A":
+			total += 1
+		else: 
+			total += card_value[card]
+	return total
+	
+def black_turn():
+
+	table_cards = []
+	user_input = "y"
+	
+	while user_input == "y":
+		postition = int (random() * len(deck))
+	print (deck[postion])
+	table.cards.append(deck[position] [0])
+	del deck[postion]
+	if calculate_score(table_cards) >= 21:
+		break
+		user_input = raw_input('Do you want another card? (Y)')
+	print ("Your score is: %d" % calculate_score(table_cards))
+	return calculate_score(table_cards)
+	
+def main():
+	deck = []
+	for colour in card_colours:
+		for card in card_value:
+			deck.append((card, colour))
+	players = ['player 1', 'player 2']
+	max_score = 0
+    winner = False
+    
+	for player in players:
+		print "\n%s, your turn starts now!\n" % player
+		score = play_turn(deck)
