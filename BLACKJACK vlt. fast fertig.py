@@ -1,4 +1,4 @@
-# BlackJack or 21 game
+# BlackJack 
 
 import random
 
@@ -10,7 +10,7 @@ while True:
     current_money = int(input("How much money are you willing to bet? "))
     total_money -= current_money
     print("\n\n")
-    # THE PLANNING PHASE
+   
     dealer_cards = []
     player_cards = []
     # Deal the cards
@@ -74,4 +74,9 @@ while True:
             current_money *= 2.5
             
     total_money += current_money
+    
+# Es ist noch möglich sich zu verschulden. Man könnte noch eine Stop-loss Funktion einbauen.
+# Ebenfalls wäre eine bildliche Darstellung der Karten möglich
+
+    
     
